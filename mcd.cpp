@@ -4,14 +4,16 @@ using namespace std;
 
 int get_int(string string);
 int mcm(int a, int b);
+void desc(long n);
 
 int main()
 {
 	int num1 = get_int("Numero 1: ");
 	int num2 = get_int("Numero 2: ");
 	bool over1 = false;
-	int mcd = (num1 * num2) / mcm(num1, num2);
-	cout<<mcd<<"\n";
+	long mcd = (num1 * num2) / mcm(num1, num2);
+	cout<<"El resultado es "<<mcd<<" o también ";
+	desc(mcd);
 }
 	
 int get_int(string string)
@@ -35,4 +37,36 @@ int mcm(int a, int b)
 			return mcm;
 		}
 	}
+}
+
+void desc(long n)
+{
+    long numero = n;
+    long counter = 0;
+    long divisor = 2;
+    if (numero != 1)
+    {
+        while(numero > 1)
+        {
+            if (numero % divisor == 0)
+            {
+                numero = numero / divisor;
+				        counter++;
+                if (numero % divisor != 0)
+                {
+                    cout<<divisor<<"^"<<counter<<"x";       
+                }
+            }
+            else
+            {
+                divisor++;
+                counter -= counter;
+            }
+        }
+    }
+    else
+    {
+        printf("1");
+    }
+    printf("1\n");
 }
