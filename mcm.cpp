@@ -13,7 +13,8 @@ int main()
 	{
 		if(mcm % num1 == 0 && mcm % num2 == 0)
 		{
-			cout<<mcm;
+			cout<<"El resultado es "<<mcm<<" o también ";
+			desc(mcm);
 			over = true;
 		}
 	}
@@ -26,4 +27,36 @@ int get_int(string string)
   cout<<string;
   cin>>n;
   return n;
+}
+
+void desc(long n)
+{
+    long numero = n;
+    long counter = 0;
+    long divisor = 2;
+    if (numero != 1)
+    {
+        while(numero > 1)
+        {
+            if (numero % divisor == 0)
+            {
+                numero = numero / divisor;
+				        counter++;
+                if (numero % divisor != 0)
+                {
+                    cout<<divisor<<"^"<<counter<<"x";       
+                }
+            }
+            else
+            {
+                divisor++;
+                counter -= counter;
+            }
+        }
+    }
+    else
+    {
+        cout<<"1";
+    }
+    cout<<"1\n";
 }
