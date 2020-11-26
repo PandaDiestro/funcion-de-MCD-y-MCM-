@@ -66,7 +66,7 @@ void desc(long n)
     }
     else
     {
-        printf("1");
+        cout<<"1";
     }
-    printf("1\n");
+    cout"1\n";
 }
